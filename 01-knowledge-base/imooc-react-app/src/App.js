@@ -18,19 +18,31 @@ function QiBingLian(props) {
 }
 
 class YiYing extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = {
-    soldiers: ['lion', 'zhuzi', 'yugensheng']
+  constructor(props) {
+    super(props);
+    this.state = {
+      soldiers: ['lion', 'zhuzi', 'yugensheng']
+    }
   }
-}
 
-addSoldier = () => {
-  console.log('hello add solider');
-  this.setState({
-    soldiers: [...this.state.soldiers, 'xingbingdanzi'+Math.random()]
-  })
-}
+  componentWillMount() {
+    console.log('component will mount');
+  }
+
+  componentDidMount() {
+    console.log('component did mount');
+  }
+
+  componentWillUnmount() {
+    console.log('component will unmount');
+  }
+
+  addSoldier = () => {
+    console.log('hello add solider');
+    this.setState({
+      soldiers: [...this.state.soldiers, 'xingbingdanzi'+Math.random()]
+    })
+  }
 
   render() {
     return (
