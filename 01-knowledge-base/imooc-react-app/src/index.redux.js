@@ -42,6 +42,3 @@ export const gunReducer = (state = 0, action) => {
    return 10;
  }
 }
-
-// gun's store
-export default createStore(gunReducer, applyMiddleware(thunk));

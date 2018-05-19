@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import App from './App';
-import gunStore from './index.redux';
-import { addGun, reduceGun, addGunAsync } from './index.redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { gunReducer, addGun, reduceGun, addGunAsync } from './index.redux';
+
+// gun's store
+const store = createStore(gunReducer, applyMiddleware(thunk));
 
 function render(){
-  ReactDom.render(<App store={gunStore} addGun={addGun} reduceGun={reduceGun} addGunAsync={addGunAsync}/>, document.getElementById('root'));
+  ReactDom.render(<App store={store} addGun={addGun} reduceGun={reduceGun} addGunAsync={addGunAsync}/>, document.getElementById('root'));
 }
 
-gunStore.subscribe(render);
+store.subscribe(render);
 
 render();
