@@ -9,6 +9,7 @@ class App extends React.Component {
     <h1>How many guns? {num}</h1>
     <button onClick={() => store.dispatch(this.props.addGun())}>Apply Gun</button>
     <button onClick={() => store.dispatch(this.props.reduceGun())}>Take Away Gun</button>
+    <button onClick={() => store.dispatch(this.props.addGunAsync())}>Add Gun - Delay</button>
    </div>
   )
  }

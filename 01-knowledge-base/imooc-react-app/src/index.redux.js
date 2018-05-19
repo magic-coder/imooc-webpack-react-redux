@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
 // define action
 const ADD_GUN = 'add_gun';
@@ -17,6 +18,19 @@ export function reduceGun() {
  };
 }
 
+export function addGunAsync() {
+  return (dispatch, getState) => {
+    const num = getState();
+    if (num < 10) {
+      setTimeout(()=>{
+        dispatch(addGun());
+      }, 2000);
+    } else {
+      console.log(num);
+    }
+  }
+}
+
 // gun reducer
 export const gunReducer = (state = 0, action) => {
  switch (action.type) {
@@ -30,4 +44,4 @@ export const gunReducer = (state = 0, action) => {
 }
 
 // gun's store
-export default createStore(gunReducer);
+export default createStore(gunReducer, applyMiddleware(thunk));
