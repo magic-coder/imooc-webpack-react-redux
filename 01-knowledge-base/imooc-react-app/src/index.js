@@ -3,7 +3,8 @@ import ReactDom from 'react-dom';
 import App from './App';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { gunReducer, addGun, reduceGun, addGunAsync } from './index.redux';
+import { Provider } from 'react-redux';
+import { gunReducer } from './index.redux';
 
 // gun's store
 const store = createStore(gunReducer, compose(
@@ -11,10 +12,10 @@ const store = createStore(gunReducer, compose(
   window.devToolsExtension ? window.devToolsExtension() : () => {})
 );
 
-function render(){
-  ReactDom.render(<App store={store} addGun={addGun} reduceGun={reduceGun} addGunAsync={addGunAsync}/>, document.getElementById('root'));
-}
-
-store.subscribe(render);
-
-render();
+ReactDom.render(
+  (
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  ), 
+  document.getElementById('root'));
