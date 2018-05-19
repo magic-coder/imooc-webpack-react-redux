@@ -1,22 +1,13 @@
-import { createStore } from 'redux';
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from './App';
+import gunStore from './index.redux';
+import {addGun, reduceGun} from './index.redux';
 
-const bulletReducer = (state = 0, action) => {
- switch (action.type) {
-  case "add":
-   return ++state;
-  case "subtract":
-   return --state;
-  default:
-   return 10;
- }
+function render(){
+  ReactDom.render(<App store={gunStore} addGun={addGun} reduceGun={reduceGun}/>, document.getElementById('root'));
 }
-const store = createStore(bulletReducer);
-store.subscribe(function(){
-  console.log("bullet number=", store.getState());
-});
 
+gunStore.subscribe(render);
 
-store.dispatch({type: "add"})
-store.dispatch({type: "add"});
-store.dispatch({type: "subtract"});
-store.dispatch({type: "subtract"});
+render();
