@@ -1,6 +1,3 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-
 // define action
 const ADD_GUN = 'add_gun';
 const REDUCE_GUN = 'reduce_gun';
