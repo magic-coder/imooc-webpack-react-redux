@@ -2,6 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addGun, reduceGun, addGunAsync } from './index.redux';
 
+
+@connect(
+ state => ({ num : state }), // state mapping to props 
+ { addGun, reduceGun, addGunAsync } // auto-dispatch actions mapping to props
+)
 class App extends React.Component {
  render() {
   return (
@@ -15,15 +20,4 @@ class App extends React.Component {
  }
 }
 
-const mapStateToProps = (state) => {
- return {
-  num: state
- }
-}
-
-const actionCreators = {
- addGun, reduceGun, addGunAsync
-}
-
-App = connect(mapStateToProps, actionCreators)(App);
 export default App;
