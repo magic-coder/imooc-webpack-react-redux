@@ -25,10 +25,18 @@ constructor(props) {
   }
 }
 
+addSoldier = () => {
+  console.log('hello add solider');
+  this.setState({
+    soldiers: [...this.state.soldiers, 'xingbingdanzi'+Math.random()]
+  })
+}
+
   render() {
     return (
       <div>
         <h2>YiYingYingZhang, {this.props.laoda}</h2>
+        <button onClick={this.addSoldier}>Add Soldier</button>
         {
           <ul>
             {
