@@ -18,8 +18,26 @@ function QiBingLian(props) {
 }
 
 class YiYing extends React.Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    soldiers: ['lion', 'zhuzi', 'yugensheng']
+  }
+}
+
   render() {
-    return <h2>YiYingYingZhang, {this.props.laoda}</h2>;
+    return (
+      <div>
+        <h2>YiYingYingZhang, {this.props.laoda}</h2>
+        {
+          <ul>
+            {
+              this.state.soldiers.map(v => <li key={v}>{v}</li>)
+            }
+          </ul>
+        }
+      </div>
+    );
   };
 }
 
