@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from 'antd-mobile';
+import { List } from 'antd-mobile';
 
 class App extends React.Component {
   render() {
@@ -48,14 +50,12 @@ class YiYing extends React.Component {
     return (
       <div>
         <h2>YiYingYingZhang, {this.props.laoda}</h2>
-        <button onClick={this.addSoldier}>Add Soldier</button>
-        {
-          <ul>
-            {
-              this.state.soldiers.map(v => <li key={v}>{v}</li>)
-            }
-          </ul>
-        }
+        <Button type="primary" onClick={this.addSoldier}>Add Soldier</Button>
+        <List renderHeader={()=>'soliders list'}>
+          {
+            this.state.soldiers.map(v => <List.Item key={v}>{v}</List.Item>)
+          }
+        </List>
       </div>
     );
   };
