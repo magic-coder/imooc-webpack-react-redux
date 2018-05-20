@@ -4,7 +4,7 @@ import App from './App';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from  'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from  'react-router-dom';
 import { gunReducer } from './index.redux';
 
 // gun's store
@@ -16,7 +16,7 @@ const store = createStore(gunReducer, compose(
 function ErYing(props) {
   return (
     <div>
-      erlian
+      erying
     </div>
   );
 }
@@ -27,6 +27,14 @@ function QiBingLian() {
       qibinglian
     </div>
   );
+}
+class Test extends React.Component {
+  render() {
+    console.log(this.props);
+    return (
+      <div>test {this.props.match.params.location}</div>
+    );
+  }
 }
 
 ReactDom.render(
@@ -44,10 +52,17 @@ ReactDom.render(
             <li>
               <Link to="/qibinglian">QiBingLian</Link>
             </li>
+            <li>
+              <Link to="/123">Test</Link>
+            </li>
           </ul>
-          <Route path='/' exact component={App} />
-          <Route path='/erying' component={ErYing} />
-          <Route path='/qibinglian' component={QiBingLian} />
+          <Switch>
+            <Route path='/' exact component={App} />
+            <Route path='/erying' component={ErYing} />
+            <Route path='/qibinglian' component={QiBingLian} />
+            <Route path='/:location' exact component={Test} />
+            <Redirect to="/erying"></Redirect>
+          </Switch>
         </div>
       </Router>
     </Provider>
