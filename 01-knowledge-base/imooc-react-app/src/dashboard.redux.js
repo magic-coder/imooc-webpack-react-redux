@@ -17,7 +17,7 @@ export function reduceGun() {
 
 export function addGunAsync() {
   return (dispatch, getState) => {
-    const num = getState();
+    const num = getState().counter;
     if (num < 10) {
       setTimeout(()=>{
         dispatch(addGun());
@@ -29,7 +29,7 @@ export function addGunAsync() {
 }
 
 // gun reducer
-export const gunReducer = (state = 0, action) => {
+export const gunReducer = (state = { counter: 0}, action) => {
  switch (action.type) {
   case ADD_GUN:
    return ++state;
