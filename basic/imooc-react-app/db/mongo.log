@@ -1,0 +1,61 @@
+2018-05-21T18:31:25.651+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] MongoDB starting : pid=35547 port=27017 dbpath=./mongodb 64-bit host=Allens-Mac.local
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] db version v3.2.18
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] git version: 4c1bae566c0c00f996a2feb16febf84936ecaf6f
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 0.9.8zh 14 Jan 2016
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] allocator: system
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] modules: enterprise 
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] build environment:
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-05-21T18:31:25.694+0800 I CONTROL  [initandlisten] options: { config: "./mongod.conf", net: { bindIp: "127.0.0.1" }, storage: { dbPath: "./mongodb" }, systemLog: { destination: "file", logAppend: true, path: "./mongo.log" } }
+2018-05-21T18:31:25.696+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-05-21T18:31:26.034+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2018-05-21T18:31:26.035+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory './mongodb/diagnostic.data'
+2018-05-21T18:31:26.036+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-05-21T18:31:46.075+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49529 #1 (1 connection now open)
+2018-05-21T18:46:30.087+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T19:01:33.344+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T19:07:26.878+0800 I NETWORK  [conn1] end connection 127.0.0.1:49529 (0 connections now open)
+2018-05-21T19:07:28.347+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50212 #2 (1 connection now open)
+2018-05-21T19:16:36.268+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T19:22:40.662+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51143 #3 (2 connections now open)
+2018-05-21T19:28:56.985+0800 I NETWORK  [conn3] end connection 127.0.0.1:51143 (1 connection now open)
+2018-05-21T19:28:57.584+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51242 #4 (2 connections now open)
+2018-05-21T19:29:00.586+0800 I NETWORK  [conn4] end connection 127.0.0.1:51242 (1 connection now open)
+2018-05-21T19:31:13.040+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51290 #5 (2 connections now open)
+2018-05-21T19:31:39.469+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T19:31:58.693+0800 I NETWORK  [conn5] end connection 127.0.0.1:51290 (1 connection now open)
+2018-05-21T19:31:59.538+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51344 #6 (2 connections now open)
+2018-05-21T19:46:42.443+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T19:53:53.472+0800 I NETWORK  [conn6] end connection 127.0.0.1:51344 (1 connection now open)
+2018-05-21T19:53:54.016+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51922 #7 (2 connections now open)
+2018-05-21T20:01:45.472+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T20:16:48.438+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T20:23:40.895+0800 I NETWORK  [conn7] end connection 127.0.0.1:51922 (1 connection now open)
+2018-05-21T20:23:41.978+0800 I NETWORK  [conn2] end connection 127.0.0.1:50212 (0 connections now open)
+2018-05-21T20:31:51.115+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T20:46:54.214+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T21:01:57.018+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T21:17:00.114+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T21:32:03.383+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T21:47:10.424+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T22:02:13.528+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T22:17:16.418+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T22:25:08.621+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58081 #8 (1 connection now open)
+2018-05-21T22:32:19.753+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T22:47:22.717+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T23:02:25.875+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T23:17:28.700+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T23:32:31.884+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-21T23:33:33.596+0800 I NETWORK  [conn8] end connection 127.0.0.1:58081 (0 connections now open)
+2018-05-21T23:47:34.810+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T00:02:37.958+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T00:17:40.846+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T00:32:43.707+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T00:47:46.621+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T01:02:50.586+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T01:17:54.519+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T01:32:57.751+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T01:48:00.307+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
+2018-05-22T02:03:03.253+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.105, "nodename nor servname provided, or not known"), (192.168.1.105, "nodename nor servname provided, or not known") ]
