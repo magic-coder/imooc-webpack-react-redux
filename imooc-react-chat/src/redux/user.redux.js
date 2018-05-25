@@ -7,24 +7,25 @@ const LOAD_INFO = 'load_info';
 const FAIL = 'fail';
 
 // create action
-function authAction(data) {
+function authAction(state) {
+	const { pwd, ...data } = state;
 	return {
 		type: AUTH_SUCCESS,
 		payload: data
 	}
 }
 
-function loadInfoAction(data) {
+function loadInfoAction(state) {
 	return {
 		type: LOAD_INFO,
-		payload: data
+		payload: state
 	}
 }
 
-function errorAction(data) {
+function errorAction(state) {
 	return {
 		type: FAIL,
-		payload: data
+		payload: state
 	}
 }
 

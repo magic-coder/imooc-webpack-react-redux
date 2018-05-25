@@ -34,7 +34,7 @@ class BossInfo extends React.Component {
 		return (
 			<div>
 				{redirectTo && redirectTo !== path? <Redirect to={this.props.redirectTo} /> : null}
-				<NavBar mode="dark" clear>Boss Info</NavBar>
+				<NavBar mode="dark">I'm Boss</NavBar>
 				<AvatarSelector selectAvatar={
 					(el) => this.setState({avatar: el.text})
 				}/>

@@ -23,7 +23,8 @@ Router.post('/register',function(req, resp){
 					if (err)
 						resp.send({code: false, errorRegisterMsg: "server error"});
 					resp.cookie('userId', doc._id);
-					resp.send({code: true, user: doc});
+					const {pwd, ...obj} = doc._doc;
+					resp.send({code: true, user: obj});
 				});
 			} else {
 				resp.send({code: false, errorRegisterMsg: "User already exists."});
@@ -40,7 +41,8 @@ Router.post('/login', function(req, resp) {
 
 		if (doc && doc.pwd === md5Pwd(pwd)) {
 			resp.cookie('userId', doc._id);
-			resp.send({code: true, user: doc});
+			const {pwd, ...obj} = doc._doc;
+			resp.send({code: true, user: obj});
 		} else if (!doc){
 			resp.send({code: false, errorLoginMsg: "User does not exist. Please register."});
 		} else if (doc && doc.pwd !== md5Pwd(pwd)) {
@@ -55,7 +57,8 @@ Router.get('/info', function(req, resp) {
 	const userId = req.cookies.userId;
 	User.findOne({_id: userId}, function(err, doc) {
 		if (doc && doc._id.toString() === userId) {
-			resp.send({code: true, user: doc});
+			const {pwd, ...obj} = doc._doc;
+			resp.send({code: true, user: obj});
 		} else {
 			resp.send({code: false});
 		}
@@ -66,7 +69,8 @@ Router.post('/update', function(req, resp) {
 	const userId = req.cookies.userId;
 	User.findByIdAndUpdate({_id: userId}, req.body, {new: true}, function(err, doc) {
 		if (doc && doc._id.toString() === userId) {
-			resp.send({code: true, user: doc});
+			const {pwd, ...obj} = doc._doc;
+			resp.send({code: true, user: obj});
 		} else {
 			resp.send({code: false});
 		}
