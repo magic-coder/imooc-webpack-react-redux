@@ -6,8 +6,7 @@ const { md5Pwd } = require('./util');
 const User = model.getModel('user');
 
 Router.get('/list',function(req, res){
-	// User.remove({},function(e,d){});
-	User.find({},function(err,doc){
+	User.find(req.query, function(err,doc){
 		return res.json(doc)
 	})
 });
@@ -27,7 +26,7 @@ Router.post('/register',function(req, resp){
 					resp.send({code: true, user: obj});
 				});
 			} else {
-				resp.send({code: false, errorRegisterMsg: "User already exists."});
+				resp.send({code: false, errorRegisterMsg: "UserCenter already exists."});
 			}
 		}
 	});
@@ -44,7 +43,7 @@ Router.post('/login', function(req, resp) {
 			const {pwd, ...obj} = doc._doc;
 			resp.send({code: true, user: obj});
 		} else if (!doc){
-			resp.send({code: false, errorLoginMsg: "User does not exist. Please register."});
+			resp.send({code: false, errorLoginMsg: "UserCenter does not exist. Please register."});
 		} else if (doc && doc.pwd !== md5Pwd(pwd)) {
 			resp.send({code: false, errorLoginMsg: "Incorrect password."});
 		} else {

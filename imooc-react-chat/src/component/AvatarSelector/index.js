@@ -13,7 +13,7 @@ class AvatarSelector extends React.Component {
 		const avatars = 'boy,girl,man,woman,bull,chick,crab,hedgehog,hippopotamus,koala,lemur,pig,tiger,whale,zebra'
 			.split(',')
 			.map((avatar) => ({
-				icon: require(`../img/${avatar}.png`),
+				icon: require(`../img/avatar/${avatar}.png`),
 				text: avatar
 			}));
 		return (
@@ -23,13 +23,13 @@ class AvatarSelector extends React.Component {
 					this.state.avatar ?
 						<div>
 							<figure>
-								<img src={require(`../img/${this.state.avatar}.png`)} alt={this.state.avatar}/>
+								<img src={require(`../img/avatar/${this.state.avatar}.png`)} alt={this.state.avatar}/>
 								<span>{this.state.avatar}</span>
 							</figure>
 						</div> :
 						<div>
 							<figure>
-								<img src={require(`../img/avatar.png`)} alt="avatar" />
+								<img src={require(`../img/avatar/avatar.png`)} alt="avatar" />
 								<span>Please select image.</span>
 							</figure>
 						</div>

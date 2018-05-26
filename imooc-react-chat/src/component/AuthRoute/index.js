@@ -21,12 +21,17 @@ export default class AuthRoute extends React.Component {
 		promise.then(() => {
 			const user = this.props.user;
 			if (user.isAuth === true) {
-				const redirectTo = getRedirectUrl(user);
-				this.props.history.push(redirectTo);
+				const pathname = this.props.location.pathname;
+				if (pathname === '/') {
+					const redirectTo = getRedirectUrl(user);
+					this.props.history.push(redirectTo);
+				} else {
+					this.props.history.push(pathname);
+				}
 			} else {
 				this.props.history.push('/login');
 			}
-		})
+		});
 	}
 
 	render() {

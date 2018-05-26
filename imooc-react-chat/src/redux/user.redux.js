@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { getRedirectUrl } from '../util';
+import cookies from 'browser-cookies';
 
 // define action
 const AUTH_SUCCESS = 'auth_success';
 const LOAD_INFO = 'load_info';
+const LOGOUT = 'logout';
 const FAIL = 'fail';
 
 // create action
@@ -29,7 +31,13 @@ function errorAction(state) {
 	}
 }
 
-// action entity
+function logoutAction() {
+	return {
+		type: LOGOUT
+	}
+}
+
+// action entity with business logic
 export function doRegisterAction(state) {
 	return dispatch => {
 		const { user, pwd, type } = state;
@@ -86,11 +94,10 @@ export function isUserLogin(resolve, reject) {
 				} else {
 					dispatch(errorAction(resp.data));
 				}
-				resolve();
+				resolve("success");
 			})
 			.catch(err => {
-				console.log(err);
-				reject();
+				reject("fail");
 			});
 	}
 }
@@ -116,6 +123,13 @@ export function doUpdateAction(state) {
 	}
 }
 
+export function doLogout(resolve) {
+	return dispatch => {
+		dispatch(logoutAction());
+		resolve(true);
+	}
+}
+
 // reducer
 const initState = {
 	user: '',
@@ -132,8 +146,10 @@ function user(state=initState, action) {
 			return { ...state, ...payload.user, redirectTo: getRedirectUrl(payload.user), isAuth: true };
 		case FAIL:
 			return { ...state, ...payload, isAuth: false };
+		case LOGOUT:
+			return {...initState};
 		default:
-			return initState
+			return state
 	}
 }
 

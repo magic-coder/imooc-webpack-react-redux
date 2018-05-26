@@ -5,10 +5,11 @@ import Register from './container/register/index';
 import BossInfo from './container/bossinfo/index';
 import GeniusInfo from './container/geniusinfo/index';
 import AuthRoute from './component/AuthRoute';
+import Dashboard from './container/dashboard/index'
 import './index.css';
 import './config';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducer';
@@ -23,7 +24,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<Router>
+				<BrowserRouter>
 					<div>
 						<AuthRoute />
 						<Switch>
@@ -31,9 +32,10 @@ class App extends React.Component {
 							<Route path="/register" component={Register} />
 							<Route path="/bossinfo" component={BossInfo} />
 							<Route path="/geniusinfo" component={GeniusInfo} />
+							<Route component={Dashboard} />
 						</Switch>
 					</div>
-				</Router>
+				</BrowserRouter>
 			</Provider>
 		)
 	}

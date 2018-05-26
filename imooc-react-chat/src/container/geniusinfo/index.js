@@ -40,7 +40,9 @@ class GeniusInfo extends React.Component {
 					<InputItem clear={true}
 										 onChange={(v) => this.handleOnChange('title', v)}>Seek</InputItem>
 					<TextareaItem clear={true} title="summary" rows={2}
-												onChange={(v) => this.handleOnChange('description', v)}/>
+												onChange={(v) => this.handleOnChange('desc', v)}/>
+					<InputItem clear={true}
+										 onChange={(v) => this.handleOnChange('money', v)}>Salary</InputItem>
 				</List>
 				<WhiteSpace size="xl"/>
 				<Button type="primary" onClick={() => this.props.doUpdateAction(this.state)}>Save</Button>
