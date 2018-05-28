@@ -1,3 +1,6 @@
+learn socket.io
+[https://www.tutorialspoint.com/socket.io/socket.io_rooms.htm](https://www.tutorialspoint.com/socket.io/socket.io_rooms.htm)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

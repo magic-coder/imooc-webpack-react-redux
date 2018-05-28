@@ -4,18 +4,27 @@ import Boss from '../../component/Boss/index';
 import Genius from '../../component/Genius/index';
 import Msg from '../../component/Msg/index';
 import UserCenter from '../../component/UserCenter/index';
+import { doGetMegList, doRecvMsg } from '../../redux/chat.redux';
 
 import { connect } from 'react-redux';
 import {Switch, Route, withRouter} from 'react-router-dom'
 
 @connect(
-	state=>state.user,
-	{ connect }
+	state=>state,
+	{ doGetMegList, doRecvMsg }
 )
 @withRouter
 class Dashboard extends React.Component {
+
+	componentDidMount() {
+		if (!this.props.chat.chatmsg.length) {
+			this.props.doGetMegList();
+			this.props.doRecvMsg();
+		}
+	}
+
 	render() {
-		const type = this.props.type;
+		const type = this.props.user.type;
 		let navLinks = [
 			{
 				path: '/boss',
@@ -57,6 +66,7 @@ class Dashboard extends React.Component {
 						navLinks.map((navLink) => {
 							return (
 								<TabBar.Item
+									badge={ navLink.path ==='/message' ? this.props.chat.unread : 0 }
 									key={navLink.path}
 									title={navLink.title}
 									icon={{uri:require(`../../component/img/navlink/${navLink.icon}.png`)}}
@@ -78,6 +88,7 @@ class Dashboard extends React.Component {
 											}
 										</Switch>
 									</div>
+
 								</TabBar.Item>)
 						})
 					}

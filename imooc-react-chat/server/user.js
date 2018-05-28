@@ -4,6 +4,7 @@ const model = require('./model');
 const { md5Pwd } = require('./util');
 
 const User = model.getModel('user');
+const Chat = model.getModel('chat');
 
 Router.get('/list',function(req, res){
 	User.find(req.query, function(err,doc){
@@ -74,6 +75,36 @@ Router.post('/update', function(req, resp) {
 			resp.send({code: false});
 		}
 	})
+});
+
+Router.get('/getmsglist', function(req, res) {
+	const user = req.cookies.userId;
+	let users = {};
+	User.find({}, function(e, userdoc) {
+		userdoc.forEach(v=>{
+			users[v._id] = {name:v.user, avatar: v.avatar};
+		})
+	});
+	Chat.find({'$or': [{from:user}, {to:user}]}, function(err, docs) {
+		if (!err) {
+			return res.json({code: true, msgs:docs, users: users})
+		}
+	})
+});
+
+Router.post('/readmsg', function(req, res) {
+	const userId = req.cookies.userId;
+	const { from } = req.body;
+	Chat.update(
+		{from, to: userId},
+		{'$set': {read: true}},
+		{'multi': true},
+		function(err, doc){
+		if (!err) {
+			return res.json({code: true, n: doc.nModified});
+		}
+		return res.json({code: false, msg: 'fail'});
+	});
 });
 
 module.exports = Router;

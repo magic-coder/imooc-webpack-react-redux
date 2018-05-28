@@ -3,3 +3,7 @@ export function getRedirectUrl (user) {
 	url = !user.avatar ? url += 'info' : url;
 	return url;
 }
+
+export function getChatId (userId, targetId) {
+	return [userId, targetId].sort().join('_');
+}

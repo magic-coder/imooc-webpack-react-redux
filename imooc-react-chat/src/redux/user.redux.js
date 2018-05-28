@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { getRedirectUrl } from '../util';
-import cookies from 'browser-cookies';
 
 // define action
 const AUTH_SUCCESS = 'auth_success';

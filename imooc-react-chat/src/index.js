@@ -5,7 +5,8 @@ import Register from './container/register/index';
 import BossInfo from './container/bossinfo/index';
 import GeniusInfo from './container/geniusinfo/index';
 import AuthRoute from './component/AuthRoute';
-import Dashboard from './container/dashboard/index'
+import Dashboard from './container/dashboard/index';
+import Chat from './component/Chat/index';
 import './index.css';
 import './config';
 
@@ -32,6 +33,7 @@ class App extends React.Component {
 							<Route path="/register" component={Register} />
 							<Route path="/bossinfo" component={BossInfo} />
 							<Route path="/geniusinfo" component={GeniusInfo} />
+							<Route path="/chat/:chatId" component={Chat} />
 							<Route component={Dashboard} />
 						</Switch>
 					</div>
